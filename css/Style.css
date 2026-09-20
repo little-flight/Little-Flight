@@ -1,26 +1,45 @@
+@import "./controls.css";
+@import "./menu.css";
+
 :root {
   --self-altitude: 200;
   --multiplayer-x: 0px;
   --multiplayer-y: 0px;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
 body {
+  width: 100%;
+  height: 100%;
   margin: 0px;
   padding: 0px;
   overflow: hidden;
 }
 
 #canvas-container {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #canvas {
-  width: max(1600px, 100%);
-  height: max(800px, 100%);
+  width: 100%;
+  height: 100%;
   position: absolute;
   z-index: 0;
 }
@@ -127,6 +146,7 @@ body {
 }
 
 /* Menu UI */
+
 #menu {
   position: absolute;
   top: 25px;
@@ -139,7 +159,7 @@ body {
 #hamburger {
   width: 50px;
   height: 50px;
-  background: url("hamburger.png") 0 0; /* Set the sprite image */
+  background: url("../assets/menu.png") 0 0; /* Set the sprite image */
   background-size: 50px 50px;
   cursor: pointer;
 }
@@ -171,6 +191,7 @@ body {
 }
 
 /* Customisation UI */
+
 #ui {
   position: absolute;
   top: 50%;
@@ -183,8 +204,8 @@ body {
   padding: 1rem;
   font-family: boxyFont;
   letter-spacing: 1px;
-  z-index: 15000;
-  display: block;
+  z-index: 150;
+  display: none;
 }
 
 #customizeMenu {
@@ -216,7 +237,7 @@ body {
 #speakerphone {
   width: 50px;
   height: 50px;
-  background-image: url("speakerphone.png");
+  background-image: url("../assets/sound.png");
   background-size: cover;
   cursor: pointer;
 }
@@ -260,3 +281,4 @@ body {
   font-family: boxyFont;
   src: url("boxyFont.otf") format("opentype");
 }
+
