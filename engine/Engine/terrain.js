@@ -21,6 +21,11 @@ function Terrain(
   terrain_canvas.height = CANVAS_DIMENSIONS.height;
   const terrain_ctx = terrain_canvas.getContext("2d");
 
+  CANVAS_DIMENSIONS.updateCallbacks.push((newDimensions) => {
+    terrain_canvas.width = newDimensions.width;
+    terrain_canvas.height = newDimensions.height;
+  });
+
   function refreshCoordinate() {
     const coordFactor = ALTIUDE_FACTOR / (altitude * 10);
 
@@ -105,7 +110,6 @@ function Terrain(
     }
   }
 
-
   function updatePosX(updatedX) {
     pos.setX(updatedX);
     refreshCoordinate();
@@ -143,6 +147,8 @@ function Terrain(
     applyOnY(y => y / camHeightRatio);
 
     updateAltimeterDisplay(altitude);
+    const style = document.documentElement.style;
+    style.setProperty("--self-altitude", Math.round(altitude));
   }
 
   function setSeed(updatedSeed) {
@@ -154,6 +160,33 @@ function Terrain(
     drawTerrain();
     return terrain_canvas;
   }
+
+  function positionUpdate() {
+    const pX = pos.getX();
+    const pY = pos.getY();
+
+    const xMapPx = `${-pX}px`;
+    const yMapPx = `${-pY}px`;
+
+    const style = document.documentElement.style;
+    style.setProperty("--multiplayer-x", xMapPx);
+    style.setProperty("--multiplayer-y", yMapPx);
+
+    requestAnimationFrame(() => positionUpdate());
+  }
+
+  function getPosition() {
+    const coordFactor = ALTIUDE_FACTOR / (altitude * 10);
+
+    const pX = pos.getX() / coordFactor;
+    const pY = pos.getY() / -coordFactor;
+
+    return {
+      x: pX,
+      y: pY,
+      altitude,
+    }
+  }
   
   return {
     updatePosX,
@@ -163,6 +196,8 @@ function Terrain(
     updateZoom,
     setSeed,
     getTerrainCanvas,
+    getPosition,
+    positionUpdate,
   };
 }
 

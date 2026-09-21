@@ -6,7 +6,7 @@ const MAX_ALTITUDE = 1000;
 const DEFAULT_ALTITUDE = 200;
 const CLOUD_HEIGHT = 110; // Clouds start at altitude 210 (200 + 10)
 const CANVAS_DIMENSIONS = {
-  width, height
+  width, height, updateCallbacks: [],
 }
 
 const terrain = Terrain(
@@ -44,6 +44,7 @@ terrain.setSeed(HashToNumber(SHA256(seedVal + "")));
 cloud.setSeed(HashToNumber(SHA256((seedVal + 200) + "")));
 cloud.moveCloud();
 timeCycle.startTimeCycle();
+terrain.positionUpdate();
 
 const engine = Engine(terrain, cloud);
 engine.draw();
