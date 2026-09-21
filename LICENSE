@@ -1,21 +1,19 @@
-MIT License
+Little Flight License
 
-Copyright (c) 2022 Glowstick // Robbie
+Copyright (c) 2026 AttAditya & Little Flight Contributors
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This software is distributed under the Little Flight License is a custom license, and it differs from the MIT License.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Little Flight is a modified derivative of The Little Plane Project, which was created by Robbie (Glowstick0017). The original project can be found at https://github.com/Glowstick0017/Little-Plane-Project and is licensed under the MIT License. The contributors of original project are not responsible for any issues or damages that arise from the use of Little Flight.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Any person who obtains a copy of this software and associated documentation files (the "Software") is granted permission to use the software and view the source code if open source. The obtained software is not to be redistributed as is, but can be redistributed under special circumstances, with proper reference to project ancestors along with the mention of licenses and copyright information.
+
+The special circumstances for redistribution include combination of following conditions:
+1. The software part being redistributed comes from open source, and not closed.
+2. The redistributed software must have modifications or additions that are significant.
+3. The branding of the redistributed software must be changed to a new name, logo, and other identifiers.
+
+Little Flight and contributors are not responsible for any damages or issues that arise from the use of this software. The software is provided without any warranties or guarantees of any kind. Responsibility is subject to the user of the software.
+
+Redistributed projects are not a liability of Little Flight and contributors, and the original project creators. The redistributed projects are solely the responsibility of the redistributors.
+
