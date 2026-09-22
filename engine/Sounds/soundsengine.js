@@ -20,10 +20,12 @@ function SoundsEngine({ defaultFrequencies }) {
   masterGain.gain.value = 0.25; // Much quieter overall
   masterGain.connect(filter);
 
-  function unlockAudio() {
-    if (audioContext.state !== 'suspended') return;
-    
-    audioContext.resume();
+  async function unlockAudio() {
+    if (audioContext.state === 'suspended') {
+      await audioContext.resume();
+    }
+
+    if (audioContext.state !== 'running') return;
 
     document.removeEventListener('touchstart', unlockAudio);
     document.removeEventListener('touchend', unlockAudio);
