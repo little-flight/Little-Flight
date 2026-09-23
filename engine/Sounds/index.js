@@ -13,13 +13,3 @@ const soundsEngine = SoundsEngine({
   defaultFrequencies: planeSound
 });
 
-$sounds.addEventListener("click", () => {
-  $sounds.classList.toggle("muted");
-
-  if ($sounds.classList.contains("muted")) {
-    soundsEngine.setVolume(0);
-  } else {
-    soundsEngine.setVolume(1);
-  }
-});
-
