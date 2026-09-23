@@ -1,4 +1,4 @@
-const WS_URL = "wss://tlpp-mp.attaditya.space";
+const WS_URL = "wss://mp.little-flight.attaditya.space";
 const multiplayerHandler = new MultiplayerHandler();
 
 function connectMultiplayer() {
