@@ -1,5 +1,6 @@
 // Propeller-like sound - softer and more rhythmic
 // Format: [frequency, volume, waveType]
+
 const planeSound = [
   [40.0, 0.20, 'sine'],        // Deep thump of blades
   [80.0, 0.12, 'triangle'],    // Softer first harmonic
@@ -10,14 +11,5 @@ const planeSound = [
 
 const soundsEngine = SoundsEngine({
   defaultFrequencies: planeSound
-});
-
-$speakerphone.addEventListener("click", () => {
-  $speakerphone.classList.toggle("muted");
-  if ($speakerphone.classList.contains("muted")) {
-    soundsEngine.setVolume(0);
-  } else {
-    soundsEngine.setVolume(1);
-  }
 });
 

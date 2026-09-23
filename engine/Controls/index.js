@@ -16,7 +16,7 @@ let playerAngle = -3.14 / 2;
 let yawStrength = 0.02; //the strength of rotation
 
 //constant flight toggle
-let constantFlight = false;
+let constantFlight = true;
 
 //pause
 let pause = true;
