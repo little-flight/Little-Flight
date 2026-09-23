@@ -64,6 +64,35 @@
       <canvas id="canvas"></canvas>
       <canvas id="timeCycle"></canvas>
 
+      <div class="top-menu">
+        <button
+          class="button pause"
+          onclick="pauseGame()"
+          oncontextmenu="return false;"
+        >
+          <img src="./assets/menu/pause.png" alt="Fly Fast">
+        </button>
+        
+        <button
+          id="sounds"
+          class="button sounds"
+          onclick="toggleSounds()"
+          oncontextmenu="return false;"
+        >
+          <image
+            src="./assets/menu/sound/on.png"
+            alt="Sound On"
+            class="unmuted"
+          >
+
+          <image
+            src="./assets/menu/sound/off.png"
+            alt="Sound Off"
+            class="muted"
+          >
+        </button>
+      </div>
+
       <div class="controls">
         <div class="controls-grid controls-left">
           <button
@@ -150,7 +179,11 @@
       </div>
 
       <div class="actions">
-        <button class="button" id="start">
+        <button
+          class="button"
+          id="start"
+          onclick="playGame()"
+        >
           Play
         </button>
 
@@ -225,8 +258,6 @@
   </div>
 
   <div id="menu">
-    <div id="hamburger"></div>
-    <div id="speakerphone"></div>
 
     <div id="nav">
       <ul>
@@ -400,7 +431,7 @@
   <script src="./engine/Controls/touch.js"></script>
   <script src="./engine/Controls/index.js"></script>
   
-  <script src="./engine/Ui.js"></script>
+  <script src="./engine/ui/index.js"></script>
 
   <script src="./engine/Multiplayer/actions.js"></script>
   <script src="./engine/Multiplayer/events.js"></script>

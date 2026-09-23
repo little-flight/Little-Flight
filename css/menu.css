@@ -15,6 +15,30 @@
   flex-direction: row-reverse;
 }
 
+.button {
+  --button-stroke: 4px;
+  background: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: var(--button-stroke);
+  border: var(--button-stroke) solid var(--base-color);
+  corner-shape: notch;
+  box-shadow: 0px calc(2 * var(--button-stroke)) var(--base-color);
+  text-decoration: none;
+  user-select: none;
+}
+
+.button:hover {
+  background: #e0e0e0;
+}
+
+.button:active {
+  box-shadow: 0px calc(1 * var(--button-stroke)) var(--base-color);
+  transform: translateY(calc(1 * var(--button-stroke)));
+}
+
 #canvas-container::before {
   content: "";
   position: absolute;
@@ -81,29 +105,6 @@
   text-align: center;
 }
 
-.button {
-  background: white;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  font-size: 2rem;
-  cursor: pointer;
-  border-radius: 4px;
-  border: 4px solid var(--base-color);
-  corner-shape: notch;
-  box-shadow: 0px 8px var(--base-color);
-  text-decoration: none;
-  user-select: none;
-}
-
-.button:hover {
-  background: #e0e0e0;
-}
-
-.button:active {
-  box-shadow: 0px 4px var(--base-color);
-  transform: translateY(4px);
-}
-
 .play-mode .home-menu {
   max-width: 0;
   overflow: hidden;
@@ -128,6 +129,7 @@
 
 :not(.play-mode) #instrumentCanvases,
 :not(.play-mode) .controls,
+:not(.play-mode) .top-menu,
 :not(.play-mode) .control-hint,
 :not(.play-mode) .nerd-stats {
   pointer-events: none;
@@ -136,19 +138,18 @@
 
 .play-mode #instrumentCanvases,
 .play-mode .controls,
+.play-mode .top-menu,
 .play-mode .control-hint,
 .play-mode .nerd-stats {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
 
-.play-mode .nerd-stats {
-  pointer-events: auto;
-  z-index: 1000;
-}
-
+.play-mode .nerd-stats,
+.play-mode .top-menu,
 .play-mode .controls {
   pointer-events: auto;
+  z-index: 1000;
 }
 
 .control-popup {
@@ -220,5 +221,39 @@
 .control-popup-close:active {
   box-shadow: 0px 3px var(--base-color);
   transform: translateY(3px);
+}
+
+.top-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  z-index: 2000;
+}
+
+.top-menu button {
+  aspect-ratio: 1/1;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  --button-stroke: 3px;
+}
+
+.top-menu img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.sounds:not(.muted) .muted {
+  display: none;
+}
+
+.sounds.muted .unmuted {
+  display: none;
 }
 
