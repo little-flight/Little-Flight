@@ -150,7 +150,11 @@
       </div>
 
       <div class="actions">
-        <button class="button" id="start">
+        <button
+          class="button"
+          id="start"
+          onclick="playGame()"
+        >
           Play
         </button>
 
@@ -225,8 +229,19 @@
   </div>
 
   <div id="menu">
-    <div id="hamburger"></div>
-    <div id="speakerphone"></div>
+    <div id="sounds" class="sounds button">
+      <image
+        src="./assets/menu/sound/on.png"
+        alt="Sound On"
+        class="unmuted"
+      >
+
+      <image
+        src="./assets/menu/sound/off.png"
+        alt="Sound Off"
+        class="muted"
+      >
+    </div>
 
     <div id="nav">
       <ul>
@@ -400,7 +415,7 @@
   <script src="./engine/Controls/touch.js"></script>
   <script src="./engine/Controls/index.js"></script>
   
-  <script src="./engine/Ui.js"></script>
+  <script src="./engine/ui/index.js"></script>
 
   <script src="./engine/Multiplayer/actions.js"></script>
   <script src="./engine/Multiplayer/events.js"></script>
